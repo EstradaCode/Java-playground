@@ -8,6 +8,7 @@ public class ejercicio2 {
 		for( int numero : array) {
 			System.out.print(numero + " - ");
 		}
+		in.close();
 	}
 	public static int[] tamanioArreglo(int n) {
 		int [] array= new int[n];
