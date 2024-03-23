@@ -40,7 +40,6 @@ public class TestArrayList {
 			System.out.println(e);
 		}
 		
-		List <Integer> l2 = new ArrayList <Integer>(l); 
 		
 		for(int numero:l) {
 			System.out.print(" | " + numero + " | ");
