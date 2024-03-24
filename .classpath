@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Collections/src"/>
+	<classpathentry kind="src" path="Lectura/src"/>
+	<classpathentry kind="src" path="Lista/src"/>
+	<classpathentry kind="src" path="Printf/src"/>
+	<classpathentry kind="src" path="PrograIII/practica1/src"/>
+	<classpathentry kind="src" path="String-Practice/src"/>
+	<classpathentry kind="output" path="Lectura/out/production/Lectura"/>
+</classpath>
