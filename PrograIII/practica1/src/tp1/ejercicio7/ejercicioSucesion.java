@@ -1,5 +1,6 @@
 package tp1.ejercicio7;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.ArrayList;
 import java.util.LinkedList;
 public class ejercicioSucesion {
@@ -17,6 +18,7 @@ public class ejercicioSucesion {
 				System.out.print(numero + " - ");
 			}
 			System.out.println("suma de los valores de lista : " + sumarLinkedList(new LinkedList<Integer>(l3)));
+			System.out.println("suma de los valores de lista : " + sumarLinkedList2(l3.listIterator()));
 			mergeSort(l3);
 			for(int numero: l3) {
 				System.out.print(numero + " - ");
@@ -62,6 +64,13 @@ public class ejercicioSucesion {
 	
 	return  lislocal.remove(0) + sumarLinkedList(lislocal);
 
+	}
+	public static int sumarLinkedList2(ListIterator<Integer> iter) { // no puedo utilizar list, sino listiterator
+		if(!iter.hasNext()) {
+			return 0;
+		}else {
+			return iter.next() + sumarLinkedList2(iter);
+		} 
 	}
 	public static List <Integer> sucesion(int n ) {
 	    List <Integer> l = new LinkedList <Integer>();
