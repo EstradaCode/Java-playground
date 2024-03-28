@@ -75,17 +75,35 @@ public class BinaryTree <T> {
 	public String toString() {
 		return this.getData().toString();
 	}
-
-	public  int contarHojas() {
-	   
-		return 0;
+	// corresponden a ejercicio2
+	public  int contarHojas(BinaryTree <T> tree) {
+		int total = 0;
+		if(!tree.isEmpty()) {
+			total++;
+			if(tree.hasLeftChild())
+				total+= this.contarHojas(tree.leftChild);
+			if(tree.hasRightChild())
+				total+= this.contarHojas(tree.rightChild);
+		}
+		return total;
 	}
 		
 		
-    	 
-    public BinaryTree<T> espejo(){
-		       		  
- 	   return null;
+    	 // ej 2
+    public BinaryTree<T> espejo(BinaryTree <T> tree){
+	   BinaryTree <T> aux = null;
+    	if(!this.isEmpty()) {
+    		aux = new BinaryTree<T>(tree.getData()); ;
+		   if(tree.hasLeftChild() && tree.hasRightChild()) {
+			   aux.addLeftChild(espejo(tree.rightChild));
+			   aux.addRightChild( espejo(tree.leftChild));
+		   }else if(tree.hasRightChild()) {
+			   aux.addLeftChild(espejo(tree.rightChild));
+		   }else if(tree.hasLeftChild()) {
+			   aux.addRightChild(espejo(tree.leftChild));
+		   }
+    	}
+    	return aux;
     }
 
 	// 0<=n<=m
