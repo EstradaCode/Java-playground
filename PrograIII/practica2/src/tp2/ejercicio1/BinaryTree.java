@@ -1,9 +1,9 @@
 package tp2.ejercicio1;
-
+import tp1.ejercicio8.Queue;
 
 
 public class BinaryTree <T> {
-	
+
 	private T data;
 	private BinaryTree<T> leftChild;   
 	private BinaryTree<T> rightChild; 
@@ -105,10 +105,50 @@ public class BinaryTree <T> {
     	}
     	return aux;
     }
-
+    
+    public void printLevelTraversal() {
+      	 BinaryTree<T> ab = null;
+      	 Queue<BinaryTree<T>> cola = new Queue<BinaryTree<T>>();
+      	 cola.enqueue(this);
+         cola.enqueue(null);
+      	 while (!cola.isEmpty()) {
+      		 ab = cola.dequeue();
+      		 if (ab != null) {
+      			 System.out.print(ab.getData());
+      			 if (ab.hasLeftChild()) {
+      				 cola.enqueue(ab.getLeftChild());
+      			 }
+      			 if (ab.hasRightChild()) {
+      				 cola.enqueue(ab.getRightChild());
+      			 }
+      		 } else if (!cola.isEmpty()) {
+      			 System.out.println();
+      			 cola.enqueue(null);
+      		 }
+      	 }
+       }
 	// 0<=n<=m
 	public void entreNiveles(int n, int m){
-		
+		int nivel = 0;
+		BinaryTree<T> ab = null; // ref nula
+     	Queue<BinaryTree<T>> cola = new Queue<BinaryTree<T>>(); // cola 
+     	cola.enqueue(this);
+        cola.enqueue(null); // todo cumple el nivel 0
+     	 while (!cola.isEmpty() && nivel <= m) {
+     		 ab = cola.dequeue();
+     		 if (ab != null) {
+     			 if(nivel >= n)
+     			 System.out.print(ab.getData());
+     			 if (ab.hasLeftChild())
+     				 cola.enqueue(ab.getLeftChild());
+     			 if (ab.hasRightChild())
+     				 cola.enqueue(ab.getRightChild());
+     		 } else if (!cola.isEmpty()) {
+     			 System.out.println();
+     			 cola.enqueue(null);
+     			 nivel++; // aca es donde cambia de nivel
+     		 }
+     	}
    }
 		
 }

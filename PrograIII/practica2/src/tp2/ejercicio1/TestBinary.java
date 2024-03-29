@@ -15,6 +15,11 @@ public class TestBinary {
 		System.out.println("nivel 1 : " + a2.getLeftChild().toString() + " -- " + a2.getRightChild().toString());
 		System.out.println("nivel2: " + a2.getLeftChild().getLeftChild().toString() +"-- " + a2.getRightChild().getLeftChild().toString());
 		System.out.println(a2.contarHojas(a2));
+		a.printLevelTraversal();
+		System.out.println("entre niveles");
+		a.entreNiveles(0, 1);
+		System.out.println("entre niveles");
+		a.entreNiveles(0, 2);
 	}
 
 }
