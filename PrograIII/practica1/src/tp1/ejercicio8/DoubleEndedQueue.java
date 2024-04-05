@@ -7,7 +7,7 @@ public class DoubleEndedQueue <E> extends Queue {
 		super();
 	}
 	public void enqueueFirst(E dato) {	
-		super.l.addFirst(dato); // consultar
+		super.getQueue().addFirst(dato); // solucionado el encapsulamiento de la clase deq utilizando modificador protected
 		
 	}
 }

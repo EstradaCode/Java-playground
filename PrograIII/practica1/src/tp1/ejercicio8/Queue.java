@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Queue <E> extends Sequence {
-	List <E> l;
+	private List <E> l;
 	public Queue() {
 		// TODO Auto-generated constructor stub
 		this.l = new ArrayList<E>();
@@ -22,7 +22,9 @@ public class Queue <E> extends Sequence {
 	public boolean isEmpty() {
 		return l.isEmpty();
 	}
-	
+	protected List<E> getQueue(){
+		return l;
+	}
 	public void enqueue(E dato) {
 		l.addLast(dato); // estructura fifo first in first out;
 	}

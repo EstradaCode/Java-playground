@@ -12,7 +12,7 @@ public class ProfundidadDeArbolBinario {
 	public ProfundidadDeArbolBinario() {
 		super();
 	}
-	public int sumaElementosProfundidad(int p) {
+	public int sumaElementosProfundidad(int p) { // respeta los parametros por ser iterativo, no requiere cambios!
 	int prof = 0, suma=0;
 	BinaryTree<Integer> ab = null; // ref nula
  	Queue<BinaryTree<Integer>> cola = new Queue<BinaryTree<Integer>>(); // cola 

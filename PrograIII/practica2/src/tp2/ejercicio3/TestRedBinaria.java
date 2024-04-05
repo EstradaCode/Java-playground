@@ -21,8 +21,8 @@ public class TestRedBinaria {
 		a.getLeftChild().getLeftChild().addRightChild(new BinaryTree<Integer>(8));
 		a.getRightChild().getRightChild().addLeftChild(new BinaryTree<Integer>(2));
 		a.getRightChild().getRightChild().addRightChild(new BinaryTree<Integer>(1));
-		 RedBinariaLlena rb = new RedBinariaLlena();
-		 System.out.println(rb.retardoReenvio(a));
+		 RedBinariaLlena rb = new RedBinariaLlena(a);
+		 System.out.println(rb.retardoReenvio()); // actualizado. Implementado de la manera correcta respetando los parametros solicitados
 	}
 
 }
