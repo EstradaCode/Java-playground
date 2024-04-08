@@ -10,11 +10,10 @@ public class TestBinary {
 		a.getLeftChild().addRightChild(new BinaryTree<Integer>(5));
 		a.addRightChild(new BinaryTree<Integer>(11));
 		a.getRightChild().addRightChild(new BinaryTree<Integer>(15));
-		BinaryTree <Integer> a2 = a.espejo(a);
-		System.out.println(a2.toString());
-		System.out.println("nivel 1 : " + a2.getLeftChild().toString() + " -- " + a2.getRightChild().toString());
-		System.out.println("nivel2: " + a2.getLeftChild().getLeftChild().toString() +"-- " + a2.getRightChild().getLeftChild().toString());
-		System.out.println(a2.contarHojas(a2));
+		a.getRightChild().getRightChild().addLeftChild(new BinaryTree<Integer>(10));
+		BinaryTree <Integer> a2 = a.espejo();
+		a2.printLevelTraversal();
+		System.out.println(a2.contarHojas());
 		a.printLevelTraversal();
 		System.out.println("entre niveles");
 		a.entreNiveles(0, 1);

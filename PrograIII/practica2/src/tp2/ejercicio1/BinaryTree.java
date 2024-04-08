@@ -76,31 +76,31 @@ public class BinaryTree <T> {
 		return this.getData().toString();
 	}
 	// corresponden a ejercicio2
-	public  int contarHojas(BinaryTree <T> tree) {
+	public  int contarHojas() {
 		int total = 0;
-		if(!tree.isEmpty()) {
+		if(this != null && !this.isEmpty()) {
 			total++;
-			if(tree.hasLeftChild())
-				total+= this.contarHojas(tree.leftChild);
-			if(tree.hasRightChild())
-				total+= this.contarHojas(tree.rightChild);
+			if(this.hasLeftChild())
+				total+= this.getLeftChild().contarHojas();
+			if(this.hasRightChild())
+				total+= this.getRightChild().contarHojas();
 		}
 		return total;
 	}
 		
 		
     	 // ej 2
-    public BinaryTree<T> espejo(BinaryTree <T> tree){
+    public BinaryTree<T> espejo(){
 	   BinaryTree <T> aux = null;
-    	if(!this.isEmpty()) {
-    		aux = new BinaryTree<T>(tree.getData()); ;
-		   if(tree.hasLeftChild() && tree.hasRightChild()) {
-			   aux.addLeftChild(espejo(tree.rightChild));
-			   aux.addRightChild( espejo(tree.leftChild));
-		   }else if(tree.hasRightChild()) {
-			   aux.addLeftChild(espejo(tree.rightChild));
-		   }else if(tree.hasLeftChild()) {
-			   aux.addRightChild(espejo(tree.leftChild));
+    	if(this !=null && !this.isEmpty()) {
+    		aux = new BinaryTree<T>(this.getData()); // cargo el dato para el arbol 2 ;
+		   if(this.hasLeftChild() && this.hasRightChild()) {
+			   aux.addLeftChild(this.getRightChild().espejo());
+			   aux.addRightChild(this.getLeftChild().espejo());
+		   }else if(this.hasRightChild()) {
+			   aux.addLeftChild(this.getRightChild().espejo());
+		   }else if(this.hasLeftChild()) {
+			   aux.addRightChild(this.getLeftChild().espejo());
 		   }
     	}
     	return aux;
