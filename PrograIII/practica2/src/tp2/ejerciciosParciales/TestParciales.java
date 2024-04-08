@@ -6,6 +6,7 @@ public class TestParciales {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// implementacion del ejercicio 7 -->
 		BinaryTree <Integer> a = new BinaryTree<Integer>(2);
 		a.addLeftChild(new BinaryTree<Integer>(7));
 		a.getLeftChild().addRightChild(new BinaryTree<Integer>(6));
@@ -26,6 +27,14 @@ public class TestParciales {
 		System.out.println("con -3" + p.isLeftTree(-3));
 		System.out.println("con 2 " +  p.isLeftTree(2));
 		System.out.println("con 4 " +  p.isLeftTree(4));
+		 // implementacion de prueba del ejercicio 8
+		BinaryTree <Integer> a2 = new BinaryTree<Integer>(2);
+		a2.addLeftChild(new BinaryTree<Integer>(7));
+		a2.getLeftChild().addRightChild(new BinaryTree<Integer>(6));
+		a2.getLeftChild().getRightChild().addLeftChild(new BinaryTree<Integer>(55));
+		a2.getLeftChild().getRightChild().addRightChild(new BinaryTree<Integer>(11));
+		a2.getLeftChild().addLeftChild(new BinaryTree<Integer>(23));
+		System.out.println(p.esPrefijo(a2,a));
 	}
 
 }

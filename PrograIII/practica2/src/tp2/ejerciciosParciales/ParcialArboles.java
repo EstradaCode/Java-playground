@@ -53,4 +53,25 @@ public class ParcialArboles {
 	/* FIN DEL EJERCICIO 7 PRACTICA 2 
 	 * 
 	 */
+	/*
+	 * ejercicio 8
+	 */
+	public boolean esPrefijo( BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
+		// es prefijo si el arbol1 y sus elementos coincide con la parte inicial del arbol2
+		boolean cumple= false; // para retornar un valor 
+		if(arbol1 == null) {
+			cumple = true; // caso 1, el arbol es null debido a que vino vacio o que de desplazó mas alla de una hoja
+		}
+		if((arbol1!=null && !arbol1.isEmpty()) && (arbol2!=null && !arbol2.isEmpty())){
+			if(!arbol1.getData().equals(arbol2.getData())) { // si el dato no es igual devuelve un false
+				return false;
+			}
+			cumple= esPrefijo(arbol1.getLeftChild(),arbol2.getLeftChild()) && // si o si devuelve algo, sea porque llegó hasta el final de arbol1 por un lado o no coincide un nodo con otro
+			esPrefijo(arbol1.getRightChild(),arbol2.getRightChild()); // recorro los hijos con esta condicion
+		}
+		return cumple; // asegura la devolución obligatoria del dato
+	} // consultar la implementacion y estructuras de recorridos
+	/* FIN DEL EJERCICIO 8 PRACTICA 2 
+	 * 
+	 */
 }
